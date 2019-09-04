@@ -17,7 +17,7 @@ blocks.forEach((block) => {
     // mousedown event
     block.addEventListener('mousedown', (event) => {
             block.clearInterval = () => {
-                clearInterval(block.interval);
+                window.clearInterval(block.interval);
             }
 
             block.interval = setInterval(() => {
@@ -29,7 +29,7 @@ blocks.forEach((block) => {
     // mouseup or leave event clears interval
     ['mouseup', 'mouseleave'].forEach(event => {
         block.addEventListener(event, () => {
-            block.clearInterval()
+                block.clearInterval ? block.clearInterval() : block.style.marginLeft = '10px';
         });
     })
 });
