@@ -13,7 +13,6 @@ blocks.forEach((block) => {
 }
         // Clear right-movement interval
     block.clearMarginInterval = () => {
-        console.log(`Clearing ${block.interval}`);
         clearInterval(rightInterval);
     }
 
